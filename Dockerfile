@@ -1,10 +1,7 @@
-ARG TARGETPLATFORM="linux/amd64"
-ARG NODE_VERSION="v22.12.0"
-
-FROM linuxserver/ffmpeg:latest AS builder
+FROM linuxserver/ffmpeg:latest
 
 ARG TARGETPLATFORM 
-ARG NODE_VERSION
+ARG NODE_VERSION="v22.12.0"
 
 RUN apt update \
     && apt install -y xz-utils \
@@ -19,4 +16,4 @@ RUN apt update \
     && tar -xvf $NODE_TARBALL -C /usr/local --strip-components=1 \
     && rm $NODE_TARBALL
 
-CMD [ "sh" ]
+ENTRYPOINT [ "sh" ]
