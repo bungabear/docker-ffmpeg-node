@@ -11,7 +11,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository_owner }}/ffmpeg-node
   BUILD_CONTEXT: .
   DOCKERFILE_PATH: ./Dockerfile
 
